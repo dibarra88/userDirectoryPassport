@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div class="container">
+             <nav class="main-nav">
+                <ul>
+                    <li><a href="/editProfile">Profile</a></li>
+                    <li><a href="/users/logout">Log out</a></li>
+                </ul>
+            </nav>
+            <h1 id="header">LinkedIn 4 Bots</h1>
+        <h2 class="page-header">{{username}}</h2>
+        {{#error}}
+            <div class="error">{{error}}</div>
+        {{/error}}
+        <form action='/editProfile' method="post">
+            <div class="form-group">
+            <label for="username">Username</label>
+            <input type='text'  class="form-input" value="{{username}}" name="username" required maxlength="50"/>
+            </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type='text'  class="form-input" value="{{name}}" name="name" required maxlength="50"/>
+        </div>
+        <div class="form-group">
+            <label for='avatar'>Avatar Link</label>
+            <input type='url'  class="form-input" value="{{avatar}}" name="avatar"  maxlength="140"/>
+        </div>
+        <div class="form-group">
+            <label for='email'>Email</label>
+            <input type='email'  class="form-input" value="{{email}}" name="email" required/>
+        </div>
+        <div class="form-group">
+            <label for='university'>University</label>
+            <input type='text'  class="form-input" value="{{university}}" name="university" required />
+        </div>
+        <div class="form-group">
+            <label for='job'>Job</label>
+            <input type='text'  class="form-input" value="{{job}}" name="job" />
+        </div>
+        <div class="form-group">
+            <label for='company'>Company</label>
+            <input type='text'  class="form-input" value="{{company}}" name="company" />
+        </div>
+        <div class="form-group">
+            <label for='skills'>Skills</label>
+            <input type='text'  class="form-input" value="{{skill0}}" name="skill0" required/>
+        </div>
+        <div class="form-group">
+            <label for='skills'></label>
+            <input type='text'  class="form-input" value="{{skill1}}" name="skill1" required/>
+        </div>
+        <div class="form-group">
+            <label for='skills'></label>
+            <input type='text'  class="form-input" value="{{skill2}}" name="skill2" required/>
+        </div>
+        <div class="form-group">
+            <label for='phone'>Phone</label>
+            <input type='tel'  class="form-input" value="{{phone}}" name="phone" required/>
+        </div>
+        <div class="form-group">
+            <label for='street_num'>Street Number</label>
+            <input type='text'  class="form-input" value="{{address.street_num}}" name="street_num" required/>
+        </div>
+        <div class="form-group">
+            <label for='street_name'>Street Name</label>
+            <input type='text'  class="form-input" value="{{address.street_name}}" name="street_name" required />
+        </div>
+        <div class="form-group">
+            <label for='city'>City</label>
+            <input type='text'  class="form-input" value="{{address.city}}" name="city" required/>
+        </div>
+        <div class="form-group">
+            <label for='state'>State or Providence</label>
+            <input type='text'  class="form-input" value="{{address.state_or_province}}" name="state_or_province" />
+        </div>
+        <div class="form-group">
+            <label for='country'>Country</label>
+            <input type='text'  class="form-input" value="{{address.country}}" name="country" required />
+        </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div class="container4Bots">
+        <div class="header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/users/status/employed">Employed  </a></li>
+                    <li><a href="/users/status/unemployed">Unemployed</a></li>
+                    <li><a href="/editProfile">Profile</a></li>
+                    <li><a href="/users/logout">Log out</a></li>
+                </ul>
+            </nav>
+            <h1 id="header">LinkedIn 4 Bots</h1>
+        </div>
+        <h2 class="page-header">User Directory {{#country}} {{.}} {{/country}} {{#skill}} {{.}} {{/skill}}
+        </h2>
+        <ul id="users">
+            {{#users}}
+            <li>
+                <div>
+                    <a href="/users/{{username}}">
+               {{#avatar}}
+                <img id="avatar" src="{{avatar}}" />
+                {{/avatar}}
+                {{^avatar}}
+                <img id="avatar" src="/img/placeholder.png" />
+                {{/avatar}}
+            <span class="name">{{name}} </span>
+            {{#company}}
+                <span class="position">{{job}} {{.}}</span>
+            {{/company}}
+            {{^company}}
+                <span class="forHire" style="color:red">Available for hire</span>
+            {{/company}}
+            </a>
+                </div>
+            </li>
+            {{/users}}
+        </ul>
+    </div>
+</body>
+
+</html>

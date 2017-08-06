@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    {{#avatar}}
+                     <img id="avatar" src="{{avatar}}" />
+                    {{/avatar}}
+                   {{^avatar}}
+                   <img id="avatar" src="/img/placeholder.png" />
+                   {{/avatar}}
+                </td>
+                <td class="leftCol">
+                    <h1>{{name}}</h1>
+                    {{#address.city}}
+                    <span>{{address.city}}, <a href="/users/country/{{address.country}}" class="link">{{address.country}}</a>| </span> {{/address.city}} {{^address.city}}
+                    <span><a href="/users/country/{{address.country}}" class="link">{{address.country}}</a></span> {{/address.city}} {{#job}}
+                    <span class="position">{{.}} {{company}}</span> {{/job}} {{^job}}
+                    <span class="forHire" style="color:red">Available for hire</span> {{/job}}
+                    <span>{{email}} | {{phone}} </span>
+                </td>
+            </tr>
+            <tr>
+                {{#university}}
+                <td class="rightCol">
+                    <span class="bold">Education </span>
+                </td>
+                <td class="leftCol"> <span>{{.}}</span>
+                </td>
+                {{/university}}
+            </tr>
+            <tr>
+                <td class="rightCol">
+                    <span class="bold">Skills </span>
+                </td>
+                <td class="leftCol">
+                    <ul class="skillList">
+                        {{#skills}}
+                        <li><a href="/users/skills/{{.}}" class="link">{{.}}</a></li>
+                        {{/skills}}
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
